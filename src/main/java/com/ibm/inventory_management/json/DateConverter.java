@@ -1,4 +1,4 @@
-package com.ibm.hello.json;
+package com.ibm.inventory_management.json;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.DeserializationContext;

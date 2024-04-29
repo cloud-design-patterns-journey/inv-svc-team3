@@ -1,4 +1,4 @@
-package com.ibm.hello.config;
+package com.ibm.inventory_management.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

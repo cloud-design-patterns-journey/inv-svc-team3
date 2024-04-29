@@ -1,4 +1,4 @@
-package com.ibm.hello.models;
+package com.ibm.inventory_management.models;
 
 import java.util.Objects;
 

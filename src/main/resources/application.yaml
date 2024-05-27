@@ -5,3 +5,15 @@ openapi:
   id: "${API_ID:hello-watson}"
   title: "${API_TITLE:Hello Watson}"
   description: "${API_DESCRIPTION:Simple Hello World API}"
+
+spring:
+  data:
+    mongodb:
+      username: "${MONGODB_USERNAME:<USERNAME>}"
+      password: "${MONGODB_PASSWORD:<PASSWORD>}"
+      database: "${MONGODB_DATABASE:<DATABASE>}"
+      authentication-database: "${MONGODB_DATABASE:<DATABASE>}"
+      port: "${MONGODB_PORT:<PORT>}"
+      host: "${MONGODB_HOST:<HOST>}"
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration

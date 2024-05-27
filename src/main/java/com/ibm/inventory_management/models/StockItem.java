@@ -1,9 +1,12 @@
 package com.ibm.inventory_management.models;
 
+import org.springframework.data.annotation.Id;
+
 import java.io.Serializable;
 
 public class StockItem implements Serializable {
     private String name;
+    @Id
     private String id = null;
     private int stock = 0;
     private double price = 0.0;
@@ -12,6 +15,7 @@ public class StockItem implements Serializable {
     public StockItem() {
         super();
     }
+
     public StockItem(String id) {
         this.id = id;
     }
@@ -19,9 +23,11 @@ public class StockItem implements Serializable {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public StockItem withName(String name) {
         this.setName(name);
         return this;

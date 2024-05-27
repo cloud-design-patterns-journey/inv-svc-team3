@@ -17,22 +17,22 @@ public class StockItemController {
     }
 
     @GetMapping(path = "/stock-items", produces = "application/json")
-    public List<StockItem> listStockItems() {
+    public List<StockItem> listStockItems() throws Exception {
         return this.service.listStockItems();
     }
 
     @PostMapping(path = "/stock-item")
-    public void addStockItem(@RequestParam String name, @RequestParam String manufacturer, @RequestParam float price, @RequestParam int stock) {
-        this.service.addStockItem(name,manufacturer,price,stock);
+    public void addStockItem(@RequestParam String name, @RequestParam String manufacturer, @RequestParam float price, @RequestParam int stock) throws Exception {
+        this.service.addStockItem(name, (double) price, stock, manufacturer);
     }
 
     @PutMapping(path = "/stock-item/{id}")
-    public void updateStockItem(@PathVariable("id") String id, @RequestParam String name, @RequestParam String manufacturer, @RequestParam float price, @RequestParam int stock) {
-        this.service.updateStockItem(id,name,manufacturer,price,stock);
+    public void updateStockItem(@PathVariable("id") String id, @RequestParam String name, @RequestParam String manufacturer, @RequestParam float price, @RequestParam int stock) throws Exception {
+        this.service.updateStockItem(id,name, (double) price, stock, manufacturer);
     }
 
     @DeleteMapping(path = "/stock-item/{id}")
-    public void deleteStockItem(@PathVariable("id") String id){
+    public void deleteStockItem(@PathVariable("id") String id) throws Exception {
         this.service.deleteStockItem(id);
     }
 }
